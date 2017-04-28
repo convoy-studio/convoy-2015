@@ -1,0 +1,46 @@
+<div id="app-container">
+	{{> header}}
+    <br><br>
+	<h1>Create Link</h1>
+    <br>
+    <form id="create-form">
+        <div class="form-group">
+            <label for="input-name">Name</label>
+            <input type="text" class="form-control" id="input-name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="input-name">URL</label>
+            <input type="text" class="form-control" id="input-url" placeholder="URL">
+        </div>
+        <div class="form-group">
+            <label for="input-name">Date</label>
+            <input type="text" class="form-control" id="input-date" placeholder="Date">
+        </div>
+    </form>
+    <div id="update-btn" class="btn btn-default">Create</div>
+</div>
+	
+<script>
+	$(document).ready(function () {
+		var $form = $(document).find('#create-form')
+		var $btn = $(document).find('#update-btn')
+		function update(e) {
+			e.preventDefault()
+			var url = 'create'
+			var data = {
+				name: $form.find('#input-name').val(),
+				url: $form.find('#input-url').val(),
+				date: $form.find('#input-date').val(),
+			}
+			$.ajax(url, {
+				method: 'PUT',
+				data: data,
+				complete: function () {
+					location = '/archive/admin'
+				}
+			})
+		}
+		$btn.on('click', update)
+	});
+</script>
+

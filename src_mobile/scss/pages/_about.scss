@@ -1,0 +1,159 @@
+#about-page {
+	@extend .full;
+	color: $black;
+	font-size: 18px;
+	line-height: 25px;
+	a {
+		font-size: 18px;
+		line-height: 25px;
+		color: $black;
+	}
+	.main-page-inside {
+		@extend .full;
+	}
+	.title {
+		@include simpleUpperText();
+		margin-bottom: 10px;
+	}
+	.info-box {
+		padding: $overallPadding;
+		.title {
+			font-size: 73px;
+			font-family: 'Machine';
+			line-height: 70px;
+		}
+		.paragraph {
+			margin-bottom: 60px;
+			margin-top: 50px;
+		}
+	}
+	.services-and-contact {
+		padding: 40px 30px;
+		.services {
+			width: 100%;
+			margin-bottom: 50px;
+		}
+		.contact {
+			width: 100%;	
+			.paragraph span, .paragraph a {
+				cursor: auto;
+				@include userSelect(text);
+			}
+		}
+	}
+	.social-feed-panel {
+		padding: $overallPadding;
+		.slide-effect {
+			pointer-events: none;
+			position: absolute;
+			z-index: 2;
+			overflow: hidden;
+			& > div {
+				position: absolute;
+				@extend .full;
+			}
+			.front-slide {
+				background-color: black;
+			}
+			.back-slide {
+				background-color: black;
+			}
+		}
+		.dynamic-wrapper {
+			position: relative;
+			@include simpleAnim(.6s, .0s, $easeOutExpo)
+			@extend .full;
+			& > div {
+				@extend .full;
+				position: absolute;
+				overflow: hidden;
+			}
+		}
+		.title-wrapper {
+			font-size: 60px;
+			font-family: 'Machine';
+			line-height: 55px;
+			margin-bottom: 20px;
+			overflow: hidden;
+		}
+		.image-wrapper {
+			margin-bottom: 20px;
+		}
+		.text-wrapper {
+		}
+		#instagram-feed {
+			overflow: hidden;
+		}
+	}
+	.weather {
+		padding: $overallPadding;
+		display: inline-block;
+		img {
+			margin-top: 20px;
+		}
+	}
+	.clients {
+		padding: $overallPadding;
+		margin: 70px 0;
+		display: inline-block;
+	}
+	.press {
+		padding: $overallPadding;
+		display: inline-block;
+	}
+	.brand-logo {
+		width: 15%;
+		height: 100px;
+		float: left;
+		margin-right: 13%;
+		margin-top: 14px;
+		// background-color: red;
+		&:nth-child(4n+5) {
+			margin-right: 0;
+		}
+		svg {
+			position: relative;
+		}
+		#dior {
+			top: -4px;
+			left: 6px;
+			width: 88%;
+		}
+		#uniqlo {
+			width: 67%;
+			top: -18px;
+			left: 15px;
+		}
+		#camper {
+			top: -10px;
+		}
+		#havana {
+			width: 80%;
+			left: 8px;
+			top: -32px;
+		}
+		#lecoq {
+			top: -24px;
+		}
+		#burlon {
+			width: 43%;
+			left: 27px;
+			top: -14px;
+		}
+		#mcdo {
+			width: 61%;
+			left: 16px;
+			top: -8px;
+		}
+		#radiofrance {
+			width: 83%;
+			left: 8px;
+			top: -16px;
+		}
+		#unilever {
+			width: 63%;
+			left: 18px;
+			top: -12px;
+		}
+	}
+} 

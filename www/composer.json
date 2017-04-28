@@ -1,0 +1,16 @@
+{
+    "name": "panagiotisthomoglou/cvy-site",
+    "require": {
+        "bobthecow/mustache-bundle": "^1.2",
+        "jaybizzle/crawler-detect" :"1.*"
+    },
+    "config": {
+        "vendor-dir": "plugins"
+    },
+    "authors": [
+        {
+            "name": "hellopath",
+            "email": "thomogloupanagiotis@gmail.com"
+        }
+    ]
+}

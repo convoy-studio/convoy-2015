@@ -1,0 +1,23 @@
+@include font-face('AvenirBook', '../font/avenir/book/Avenir-Book');
+@include font-face('AvenirMedium', '../font/avenir/medium/Avenir-Medium');
+@include font-face('AvenirBlk', '../font/avenir/black/Avenir-Black');
+@include font-face('Machine', '../font/machine/MachineITCbyBT-Regular');
+
+#font-charger {
+	left: -10000px;
+	top: -10000px;
+	position: absolute;
+	@include opacity(0);
+	#AvenirBook {
+		font-family: 'AvenirBook';
+	}
+	#AvenirMedium {
+		font-family: 'AvenirMedium';
+	}
+	#AvenirBlk {
+		font-family: 'AvenirBlk';
+	}
+	#Machine {
+		font-family: 'Machine';
+	}
+}

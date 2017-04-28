@@ -1,0 +1,201 @@
+#home-page {
+	// LANDING
+	#landing {
+		
+		cursor: move;
+
+		.bottom-text {
+			$txtH: 114px;
+			text-align: center;
+			color: black;
+			position: absolute;
+			top: 72%;
+			font-size: 16px;
+			letter-spacing: 0.2px;
+    		line-height: 22px;
+			z-index: 2;
+			width: 100%;
+		}
+		.cbp {
+			font-family: Machine;
+			font-size: 40px;
+			line-height: 68px;
+		}
+		#block-list-wrapper {
+			background-color: transparent;
+			position: absolute;
+			z-index: 2;
+		}
+		.arrow-container {
+			@extend .top-left;
+			& > div {
+				$size: 36px;
+		        width: $size;
+		        height: $size;
+				@include opacity(1);
+				@include simpleAnim(.5s, 0s, $easeOutExpo);
+			}
+			.arrow.bottom {
+				@include keyframes(slide-down) {
+					20% { opacity: 1; }
+					100% { opacity: 0; }
+				}
+				@include animation('slide-down .6s infinite');
+			}
+
+		}
+		#block-list-wrapper {
+			@extend .full;
+			.blocks-wrapper, #block-part {
+				@extend .full;
+			}
+		}
+		#block-part .infos-wrapper {
+            $w: 900px;
+            @include max-width($w);
+            margin-left: -$w/2;
+            position: relative;
+        }
+        .title {
+        	margin-bottom: 50px;
+        }
+        .subtitle {
+        	font-size: 30px;
+        	line-height: 48px;
+        }
+	}
+
+	// WORKS
+	.block-list-parent {
+		#block-part .infos-wrapper { 
+			margin-left: 0;	
+		}
+	}
+	#fullscreen-content-wrapper {
+		z-index: 2;
+	}
+	.block-list-parent {
+		@include globalSlideTransition();
+		@extend .full;
+		overflow: hidden;
+	}
+	.block-list-parent #block-part {
+		.block-background {
+			@include simpleAnim(.1s, .0s, $easeOutExpo)
+		}
+		.infos-wrapper {
+            position: relative;
+            width: auto;
+            height: auto;
+            z-index: 1000;
+            & > span {
+                position: relative;
+            }
+            .title {
+				position: absolute;
+				font-family: 'Machine';
+				font-size: 200px;
+				text-align: justify;
+				letter-spacing: 170px;
+				white-space: nowrap;
+				@include simpleAnim(.1s, .0s, $easeOutExpo)
+            }
+            .subtitle {
+        		margin-left: $overallMargin;
+        		font-size: 21px;
+        		width: 25%;
+				letter-spacing: 0.2px;
+				line-height: 1.3;
+				position: absolute;
+				max-width: 300px;
+            }
+            #explore-btn {
+            	margin-left: $overallMargin + 2px;
+            	margin-top: 30px;
+            	@include max-screen($MQ_LARGE) {
+            		margin: 0;
+            	}
+            }
+        }
+	}
+
+	#main-internal-page-container {
+		@extend .full;
+		@extend .top-left;
+		position: absolute;
+		z-index: 5;
+		.internal-page-wrapper {
+			position: absolute;
+			width: 100%;
+			.work-title {
+				@include simpleUpperText();
+				color: $black;
+				text-transform: uppercase;
+				position: absolute;
+				top: $overallMargin;
+				white-space: nowrap;
+				font-family: 'AvenirBook';
+				.title {
+					font-family: 'AvenirBlk';
+					font-size: 12.8px;
+				}
+			}
+			.background {
+				background-color: #fff;
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 0;
+				@extend .full;
+				@include simpleAnim(.8s, 0s, $easeOutExpo);
+				@include opacity(0);
+				&.show {
+					@include simpleAnim(.8s, 0s, $easeOutExpo);
+					@include opacity(1);
+				}
+			}
+		}
+		.main-cover-wrapper {
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 7;
+			overflow: hidden;
+			&.y-animation {
+				@include simpleAnim(.6s, 0s, $easeOutExpo);
+			}
+			&.scale-y-animation {
+				@include simpleAnim(.5s, 0s, cubic-bezier(.8,.2,0,1));
+			}
+			& > div {
+				position: absolute;
+			}
+			.cover-top-inside {
+				z-index: 1;
+				@extend .full;
+			}
+			.cover-bottom-inside {
+				top: -4px;
+				left: -4px;
+				width: 102%;
+				height: 102%;
+			}
+		}
+		.page-holder {
+			position: relative;
+			z-index: 8;
+		}
+		.text-btn {
+			color: $black;
+			z-index: 42;
+			right: $overallMargin;
+			top: $overallMargin;
+		}
+		.scrollbar-wrapper {
+			position: absolute;
+			z-index: 999;
+			right: 0;
+			top: 0;
+		}
+	}
+}

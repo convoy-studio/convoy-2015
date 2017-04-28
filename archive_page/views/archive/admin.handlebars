@@ -1,0 +1,43 @@
+<div id="app-container">
+    {{> header}}
+    <br><br>
+    <a href="admin/create"><button type="button" class="btn btn-success">Create Link</button></a>
+
+    <section>
+        <table>
+            {{#each sites}}
+            <tr>
+                <th>{{name}}</th>
+                <th><a target="_blank" href="{{url}}">{{url}}</a></th>
+                <th>{{date}}</th>
+                <th>
+                    <a href="admin/edit/{{@index}}"><button type="button" class="btn btn-default btn-xs">Edit</button></a>
+                    <button type="button" data-id="{{@index}}" class="btn btn-default btn-xs delete-btn">Delete</button>
+                </th>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var $deleteBtns = $(document).find('.delete-btn')
+        function update(e) {
+            e.preventDefault()
+            var id = $(e.currentTarget).attr('data-id')
+            var url = 'admin'
+            var data = {
+                id: id
+            }
+            $.ajax(url, {
+                method: 'DELETE',
+                data: data,
+                complete: function () {
+                    location.reload()
+                }
+            })
+        }
+        $deleteBtns.on('click', update)
+    });
+</script>

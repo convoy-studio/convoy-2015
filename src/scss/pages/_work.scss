@@ -1,0 +1,52 @@
+#work-page {
+	// width: $mainPageWidth;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: auto;
+	top: 0;
+	left: 0;
+	color: #000;
+	.title-paragraph {
+		padding: 0 $globalParagraphPadding;
+		.title {
+			@include simpleUpperText();
+		}
+		.paragraph {
+			font-family: 'AvenirBook';
+			padding: 0;
+		}
+	}
+	.fullscreen-image {
+		&.medium {
+			padding: 0 10%;
+		}
+	}
+	#extra-margin {
+		$h: 100px;
+	    display: block;
+	    height: $h;
+		&.small {
+			height: $h / 2;
+		}
+	}
+	#slideshow {
+		position: relative;
+		overflow: hidden;
+		cursor: none;
+		#fullscreen-content-wrapper {
+			position: absolute;
+			@extend .full;
+		}
+		.images-wrapper {
+			@extend .full;
+			@include globalSlideTransition();
+		}
+		.top-container-wrapper {
+			@extend .full;
+			position: absolute;
+			z-index: 100;
+		}
+		
+	} 
+}

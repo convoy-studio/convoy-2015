@@ -1,0 +1,13 @@
+<div id="app-container">
+    {{> header}}
+    <section>
+        <table>
+            {{#each sites}}
+            <tr>
+                <th><a target="_blank" href="{{url}}">{{name}}</a></th>
+                <th>{{date}}</th>
+            </tr>
+            {{/each}}
+        </table>
+    </section>
+</div>

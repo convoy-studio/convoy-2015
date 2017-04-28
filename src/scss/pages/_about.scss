@@ -1,0 +1,203 @@
+#about-page {
+	@extend .full;
+	color: $black;
+	font-size: 18px;
+	line-height: 25px;
+	a {
+		font-size: 18px;
+		line-height: 25px;
+		color: $black;
+	}
+	.paragraph {
+		padding: 0;
+	}
+	.main-page-inside {
+		width: $mainPageWidth;
+		padding-top: 120px;
+		position: absolute;
+		left: 50%;
+		margin-left: -$mainPageWidth / 2;
+	}
+	.float-left {
+		float: left;
+		width: 50%;
+		margin-right: 6%;
+	}
+	.float-right {
+		float: right;
+		width: 40%;
+	}
+	.left-container > div, .right-container > div {
+		@include inline-block;
+		width: 100%;
+		margin-top: 80px;
+	}
+	.title {
+		@include simpleUpperText();
+		margin-bottom: 10px;
+	}
+	.info-box {
+		.title {
+			font-size: 73px;
+			font-family: 'Machine';
+			line-height: 70px;
+		}
+		.paragraph {
+			margin-top: 30px;
+		}
+	}
+	.services-and-contact {
+		@extend .full;
+		.services {
+			width: 48%;
+			float: left;
+			margin-right: 4%;
+		}
+		.contact {
+			width: 48%;	
+			float: right;
+			.paragraph span, .paragraph a {
+				cursor: auto;
+				@include userSelect(text);
+			}
+		}
+	}
+	.social-feed-panel {
+		overflow:hidden;
+		.slide-effect {
+			pointer-events: none;
+			position: absolute;
+			z-index: 2;
+			overflow: hidden;
+			& > div {
+				position: absolute;
+				@extend .full;
+			}
+			.front-slide {
+				background-color: black;
+			}
+			.back-slide {
+				background-color: black;
+			}
+		}
+		.dynamic-wrapper {
+			position: relative;
+			@include simpleAnim(.6s, .0s, $easeOutExpo)
+			@extend .full;
+			& > div {
+				@extend .full;
+				position: absolute;
+				overflow: hidden;
+			}
+		}
+		.title-wrapper {
+			font-size: 60px;
+			font-family: 'Machine';
+			line-height: 55px;
+			margin-bottom: 20px;
+		}
+		.image-wrapper {
+			margin-bottom: 20px;
+		}
+		.text-wrapper {
+		}
+
+	}
+	.weather {
+		img {
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+	.clients {
+	}
+	.press {
+	}
+	.brand-logo {
+		width: 13%;
+		height: 100px;
+		float: left;
+		margin-right: 13%;
+		margin-top: 14px;
+		// background-color: red;
+		&:nth-child(4n+5) {
+			margin-right: 0;
+		}
+		svg {
+			position: relative;
+		}
+		#dior {
+			top: -4px;
+			left: 6px;
+			width: 88%;
+		}
+		#uniqlo {
+			width: 67%;
+			top: -18px;
+			left: 10px;
+		}
+		#camper {
+			top: -10px;
+		}
+		#havana {
+			width: 80%;
+			left: 8px;
+			top: -30px;
+		}
+		#lecoq {
+			top: -24px;
+		}
+		#burlon {
+			width: 43%;
+			left: 24px;
+			top: -14px;
+		}
+		#mcdo {
+			width: 61%;
+			left: 16px;
+			top: -8px;
+		}
+		#radiofrance {
+			width: 83%;
+			left: 8px;
+			top: -16px;
+		}
+		#unilever {
+			width: 63%;
+			left: 18px;
+			top: -12px;
+		}
+		#pigalle {
+			width: 76%;
+			left: 12px;
+			top: -2px;
+		}
+		#mubi {
+			width: 90%;
+			left: 4px;
+		}
+		#pernod {
+			width: 114%;
+			left: -2px;
+			top: -3px;
+		}
+		#colette {
+			width: 100%;
+			left: 3px;
+			top: -2px;
+		}
+		#kenzo {
+			width: 100%;
+			top: -2px;
+		}
+		#dazed {
+			width: 110%;
+		}
+		#art-partner {
+			width: 140%;
+			position: relative;
+			left: -10px;
+			top: 3px;
+		}
+	}
+} 

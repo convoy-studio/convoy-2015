@@ -1,0 +1,66 @@
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: "AvenirBook";
+    background-color: $white;
+}
+
+html {
+    @extend .full;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+* {
+    @include backface-visibility(hidden);
+}
+
+#app-container  {
+    
+    // font smoothing
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+    // disable text-selection & text cursor
+    @include userSelect(none);
+    cursor: default;
+
+    // overall text params
+    font-size: $globalFontSize;
+
+    position: absolute;
+    @extend .full;
+}
+
+#app-template {
+    @extend .full;
+}
+
+#pages-container {
+    position: relative;
+    @extend .full;
+    & > div {
+        @extend .full;
+        position: absolute;
+    }
+    @include simpleAnim(1.0s, .0s, $easeOutSine)
+    @include blur(0px);
+    @include transform(translateZ(0px));
+    &.menu-open-state {
+        @include simpleAnim(1.6s, .0s, $easeOutSine)
+        @include blur(20px);
+    }
+}
+
+footer, header {
+    padding: 14px;
+}
+
+.page-wrapper {
+    @extend .full;
+    position: fixed;
+    // padding: 0 $overallMargin;
+    color: $white;
+}
+

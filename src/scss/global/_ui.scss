@@ -1,0 +1,344 @@
+* {
+    backface-visibility: hidden;
+    user-select: none;
+    transform-style: flat;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-drag: none;
+    outline: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+button {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    cursor: pointer;
+}
+svg, svg * {
+    backface-visibility: hidden;
+}
+.clear-float {
+    clear: both;
+}
+img {
+    border:0;
+    width: 100%;
+    display: block;
+}
+a:-moz-focus-inner {
+    border: 0;
+    outline: none;
+}
+a:focus {
+    border: 0;
+    outline: none;
+}
+// for firefox image scale smoothing
+img {
+    -ms-interpolation-mode: bicubic;
+}
+// for ie
+img {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */
+    zoom: 1;
+}
+.btn {
+    cursor: pointer;
+}
+.relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.full {
+    width: 100%;
+    height: 100%;
+}
+.top-left {
+    top: 0;
+    left: 0;
+}
+.vertical-center-parent {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.vertical-center-child {
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+}
+.full-block {
+    position: absolute;
+    @extend .top-left;
+}
+.fullscreenBg {
+    position: absolute;
+    @extend .top-left;
+}
+h4 {
+    font-size: 30px;
+    line-height: 70px;
+}
+a {
+    font-size: 22px;
+    color: $white;
+    text-decoration: none;
+}
+.paragraph {
+    margin: 20px 0;
+    padding: 0 $globalParagraphPadding;
+    font-size: 18px;
+    text-align: left;
+    line-height: 28px;
+}
+.paragraph.headline {
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    font-family: AvenirMedium;
+    &.header {
+        margin: 0;
+    }
+}
+.children-wrapper {
+    position: absolute;
+    @include globalSlideTransition();
+    @extend .full;
+    & > div {
+        @extend .full;
+        position: absolute;
+    }   
+}
+#block-list-wrapper {
+    @extend .full;
+    .blocks-wrapper {
+        @extend .full;
+        @include globalSlideTransition();
+    }
+    #block-part {
+        color: $white;
+        overflow: hidden;
+    }
+    #list-menu-wrapper {
+        position: absolute;
+        color: $white;
+        z-index: 3;
+    }
+}
+.bottom-line-btn {
+    position: absolute;
+    @include simpleUpperText();
+    .text-with-line-btn {
+        width: 100%;
+        height: 100%;
+    }
+    .bottom-line {
+        width: 100%;
+        height: 6px;
+        position: absolute;
+        bottom: -6px;
+        @include anim(.8s, 0s, $easeInOutExpo, scaleY(0.3) translateZ(0px), 0%, 0%);
+    }
+    &:hover {
+        .bottom-line {
+            @include anim(.8s, 0s, cubic-bezier(0,1.37,.25,.99), scaleY(1) translateZ(0px), 0%, 0%);
+        }
+    }
+}
+.text-btn {
+    text-transform: uppercase;
+    @include simpleUpperText();
+    position: absolute;
+    white-space: nowrap;
+    .text-title {
+        @include simpleAnim(.6s, 0s, $easeInOutExpo);
+    }
+    .rects-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        & > div {
+            position: absolute;
+            width: 100%;
+        }
+        .bg-box {
+            height: 100%;
+            background-color: $black;
+        }
+        .bg-line {
+            $h: 4px;
+            height: $h;
+            top: 50%;
+            margin-top: -$h;
+            background-color: $black;
+        }
+    }
+    .inside-wrapper {
+        position: relative;
+        overflow: hidden;
+        @extend .full;
+    }
+    .background {
+        position: absolute;
+        top: -111%;
+        left: -23%;
+        width: 140%;
+        height: 300%;
+    }
+}
+.close-btn {
+    $size: 42px;
+    width: $size;
+    height: $size;
+    position: absolute;
+    z-index: 150;
+    top: $overallMargin;
+    right: $overallMargin;
+}
+
+.scrollbar-wrapper {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    top: 0;
+}
+
+
+#projects-menu {
+    position: absolute;
+    .projects-parts-wrapper {
+        position: absolute;
+        z-index: 1;
+    }
+    .project-part {
+        position: absolute;
+        & > div {
+            position: absolute;
+        }
+        .media-wrapper {
+            @extend .full;
+        }
+        .title {
+            white-space: nowrap;
+            text-transform: capitalize;
+            font-size: 14px;
+            color: white;
+            font-family: AvenirMedium;
+        }
+    }
+    .background {
+        position: absolute;
+        visibility: hidden;
+        background-color: #000;
+        @include opacity(0);
+        @include simpleAnim(.4s, .0s, $easeOutSine)
+        &.active {
+            visibility: visible;
+            @include opacity(0.8);
+            @include simpleAnim(.4s, .0s, $easeOutSine)    
+        }
+    }
+}
+
+.view-smooth-scrollbar {
+    $scrollbarW: 22px; 
+    width: $scrollbarW;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 999999;
+    top: 0;
+    .scroll-bg, .scroll-grab {
+        position: absolute;
+    }
+    .scroll-bg {
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        display: none;
+    }
+    .scroll-grab {
+        width: $scrollbarW;
+        height: 100px;
+        z-index: 1;
+        &.hovered {
+            .scroll-inside {
+                @include anim(.6s, 0s, $easeOutExpo, translateX(-8px) translateZ(0px), 0%, 50%);
+            }
+        }
+        .scroll-inside {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            left: 16px;
+            position: relative;
+            @include anim(.6s, 0s, $easeOutExpo, translateX(0px) translateZ(0px), 0%, 50%);
+        }
+    }
+}
+
+#wistia-player {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(1px);
+    * {
+        background-color: #fff;
+        background: #fff;
+    }
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.arrow-container {
+    position: absolute;
+    z-index: 99;
+    color: blue;
+    & > div {
+        $size: 44px;
+        width: $size;
+        height: $size;
+        position: absolute;
+        @include opacity(0);
+        @include simpleAnim(.1s, 0s, $easeOutSine);
+    }
+}
+
+#discover-btn {
+    margin: 38px 0;
+    line-height: 20px;
+    .btn-wrapper {
+        position: absolute;
+    }
+    a {
+        font-size: 18px;
+        color: black;
+    }
+    .bottom-line {
+        width: 100%;
+        height: 6px;
+        position: absolute;
+        bottom: -6px;
+        @include anim(.8s, 0s, $easeInOutExpo, scaleY(0.3) translateZ(0px), 0%, 0%);
+        background-color: black;
+    }
+    &:hover {
+        .bottom-line {
+            @include anim(.8s, 0s, cubic-bezier(0,1.37,.25,.99), scaleY(1) translateZ(0px), 0%, 0%);
+        }
+    }
+}

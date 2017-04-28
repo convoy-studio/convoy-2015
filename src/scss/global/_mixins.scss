@@ -1,0 +1,10 @@
+@mixin globalSlideTransition() {
+    transition: transform .6s $easeInOutQuart;
+}
+@mixin simpleUpperText() {
+	font-size: $smallTitleSize;
+    font-family: 'AvenirBlk';
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+

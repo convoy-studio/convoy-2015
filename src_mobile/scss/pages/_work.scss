@@ -1,0 +1,56 @@
+#work-page {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+
+	a {
+		color: black;
+	}
+
+	.paragraph {
+		color: $black;
+		margin: 20px 0;
+		text-align: left;
+		font-size: $smallTitleSize;
+		line-height: 19px;
+		padding: $overallPadding;
+	}
+	.paragraph.headline {
+		font-size: 20px;
+		line-height: 27px;
+	}
+	.title-paragraph {
+		padding: $overallPadding;
+		.title {
+			@include simpleUpperText();
+			color: $black;
+		}
+		.paragraph {
+			font-family: 'AvenirBook';
+			padding: 0;
+		}
+	}
+	#extra-margin {
+	    display: block;
+	    height: 40px;
+	}
+	.client-title {
+		text-align: center;
+		padding: 40px 0;
+		margin-top: $overallMargin*1.4;
+		@include simpleUpperText();
+		.title {
+			font-family: AvenirBook;
+		}
+	}
+	.next-project-btn {
+		text-align: center;
+		font-family: AvenirBlk;
+		font-size: $smallTitleSize;
+		line-height: 19px;
+		text-transform: uppercase;
+		padding: 40px 0;
+	}
+}

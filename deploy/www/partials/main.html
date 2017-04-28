@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js">
+   <head>
+        <base href="http://{{host}}" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Convoy – CREATIVE BUSINESS PARTNERS</title>
+        <meta name="description" content="Convoy is an award-winning agency based in Paris with a passion for Brand Strategy + Creative Content + Innovation. All necessities provided, all boredom amused">
+        <meta name="keywords" content="brand strategy, creative agency, innovation, paris, convoy, business, partners, france, bastille, interactive, luxe, storytelling, brand content, social media, branding, design, technology, content marketing strategy">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+        <meta property="og:title" content="Convoy – CREATIVE BUSINESS PARTNERS" />
+        <meta property="og:description" content="Convoy is an award-winning agency based in Paris with a passion for Brand Strategy + Creative Content + Innovation. All necessities provided, all boredom amused" />
+        <meta property="og:image" content="http://convoy.me/image/share.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://convoy.me" />
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@convoystudio">
+        <meta name="twitter:title" content="Convoy – CREATIVE BUSINESS PARTNERS">
+        <meta name="twitter:description" content="Convoy is an award-winning agency based in Paris with a passion for Brand Strategy + Creative Content + Innovation. All necessities provided, all boredom amused">
+        <meta name="twitter:image:src" content="http://convoy.me/image/share.jpg">
+
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="http://convoy.me/" />
+
+        <link rel="apple-touch-icon" sizes="57x57" href="http://convoy.me/image/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://convoy.me/image/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://convoy.me/image/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://convoy.me/image/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="http://convoy.me/image/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://convoy.me/image/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://convoy.me/image/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://convoy.me/image/icons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="http://convoy.me/image/icons/apple-touch-icon-180x180.png">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="http://convoy.me/image/icons/mstile-144x144.png">
+
+        <meta name="fragment" content="!">
+        <meta name="pinterest" content="nopin" />
+        
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+        <link rel="image_src" href="http://convoy.me/image/share.jpg" / >
+
+        <style>
+            #font-charger {
+                left: -10000px;
+                top: -10000px;
+                position: absolute;
+                color: white;
+                opacity: 0;
+            }
+            #alternative-content {
+                left: -10000px;
+                top: -10000px;
+                position: absolute;
+                color: black;
+                font-size: 12px;
+                opacity: 0;
+            }
+            #alternative-content a {
+                font-size: 12px;
+                color: black;
+            }
+        </style>
+
+   </head>
+<body>
+
+    <script type="text/javascript">var DeviceType = '{{deviceType}}';</script>
+    <script type="text/javascript">var Host = '{{host}}';</script>
+    <script type="text/javascript">var URI = '{{uri}}';</script>
+    
+    <div id="font-charger">
+        <div id="AvenirMedium">.</div>
+        <div id="AvenirBook">.</div>
+        <div id="AvenirBlk">.</div>
+        <div id="Machine">.</div>
+    </div>
+    
+    <div id="alternative-content">
+        
+        <div>
+            <ul>
+                {{#works}}
+                    <li>
+                        <a title="{{{title->txt}}} / {{{header}}}" href="http://convoy.me/#!/works/{{{id}}}">
+                            <h1>{{{title->txt}}}</h1>
+                            <h2>client: {{{client}}}</h2>
+                            <h3>{{{header}}}</h3>
+                            <p>{{{subtitle}}}</p>
+                        </a>
+                        {{#components}}
+                            <p>{{{text}}}</p>
+                        {{/components}}
+                    </li>
+                {{/works}}
+            </ul>
+        </div>
+
+
+        <div class="info-box">
+            <div class="title">{{{about.title}}}</div>
+            <div class="paragraph">{{{about.subtitle}}}</div>
+        </div>
+        <div class="services-and-contact">
+            <div class="services">
+                <div class="title">{{{about.services_title}}}</div>
+                <div class="paragraph">{{{about.services_p}}}</div>
+            </div>
+            <div className="contact">
+                <div className="title">{{{about.contact_title}}}</div>
+                <div className="paragraph">
+                    <br/>
+                    <a target='_blank' href="{{{about.contact_map_url}}}">{{{about.contact_map_text}}}</a>
+                    {{{about.contact_tel}}}<br/>
+                    <a href="mailto:{{{about.contact_email}}}">{{{about.contact_email}}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--[if lt IE 7 ]> <div id="app-container" class="ie6"> <![endif]-->
+    <!--[if IE 7 ]>    <div id="app-container" class="ie7"> <![endif]-->
+    <!--[if IE 8 ]>    <div id="app-container" class="ie8"> <![endif]-->
+    <!--[if IE 9 ]>    <div id="app-container" class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--> <div id="app-container"></div> <!--<![endif]-->
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles{{prefix}}.css">
+    <!-- end Styles -->
+
+    <script charset="ISO-8859-1" src="lib/E-v1.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/pixi.min.js"></script>
+    <script src="lib/preloadjs-0.6.1.min.js"></script>
+    <script src="lib/SplitText.min.js"></script>
+    <script src="vendor/vendor.js"></script>
+    <script src="lib/jquery.simpleWeather.min.js"></script>
+    <script src="js/app{{prefix}}.js"></script>
+
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-54270450-5");
+    pageTracker._trackPageview();
+    </script>
+
+
+</body>
+</html>

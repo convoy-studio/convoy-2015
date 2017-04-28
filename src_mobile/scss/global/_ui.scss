@@ -1,0 +1,267 @@
+* {
+    backface-visibility: hidden;
+    user-select: none;
+    transform-style: flat;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-user-drag: none;
+    outline: 0;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+button {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    border-spacing: 0;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    cursor: pointer;
+}
+svg, svg * {
+    backface-visibility: hidden;
+}
+.clear-float {
+    clear: both;
+}
+img {
+    border:0;
+    width: 100%;
+    display: block;
+}
+a:-moz-focus-inner {
+    border: 0;
+    outline: none;
+}
+a:focus {
+    border: 0;
+    outline: none;
+}
+// for firefox image scale smoothing
+img {
+    -ms-interpolation-mode: bicubic;
+}
+// for ie
+img {
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);   /* IE6 & 7 */
+    zoom: 1;
+}
+.btn {
+    cursor: pointer;
+}
+.relative {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.full {
+    width: 100%;
+    height: 100%;
+}
+.top-left {
+    top: 0;
+    left: 0;
+}
+.vertical-center-parent {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.vertical-center-child {
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+}
+.full-block {
+    position: absolute;
+    @extend .top-left;
+}
+.fullscreenBg {
+    position: absolute;
+    @extend .top-left;
+}
+h4 {
+    font-size: 30px;
+    line-height: 70px;
+}
+a {
+    font-size: 22px;
+    color: $white;
+    text-decoration: none;
+}
+.children-wrapper {
+    @extend .full;
+    & > div {
+        @extend .full;
+    }   
+}
+#block-list-wrapper {
+    @extend .full;
+    #block-part {
+        color: $white;
+        .main-cover-wrapper {
+            position: relative;
+        }
+    }
+    #list-menu-wrapper {
+        position: absolute;
+        color: $white;
+        z-index: 3;
+    }
+}
+.bottom-line-btn {
+    position: absolute;
+    @include simpleUpperText();
+    text-align: center;
+    .text-with-line-btn {
+        width: 100%;
+        height: 100%;
+    }
+}
+.text-btn {
+    text-transform: uppercase;
+    @include simpleUpperText();
+    color: black;
+    .text-title {
+        @include simpleAnim(.6s, 0s, $easeInOutExpo);
+    }
+    .rects-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        & > div {
+            position: absolute;
+            width: 100%;
+        }
+        .bg-box {
+            height: 100%;
+            background-color: $gray;
+        }
+        .bg-line {
+            $h: 4px;
+            height: $h;
+            top: 50%;
+            margin-top: -$h;
+            background-color: $black;
+        }
+    }
+}
+.close-btn {
+    $size: 42px;
+    width: $size;
+    height: $size;
+    position: absolute;
+    z-index: 150;
+    top: $overallMargin;
+    right: $overallMargin;
+}
+
+.scrollbar-wrapper {
+    position: absolute;
+    z-index: 999;
+    right: 0;
+    top: 0;
+}
+
+
+#projects-menu {
+    position: absolute;
+    .projects-parts-wrapper {
+        position: absolute;
+        z-index: 1;
+    }
+    .project-part {
+        position: absolute;
+        & > div {
+            position: absolute;
+        }
+        .media-wrapper {
+            @extend .full;
+        }
+        .title {
+            white-space: nowrap;
+            text-transform: capitalize;
+            font-size: 14px;
+        }
+    }
+    .background {
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+.view-smooth-scrollbar {
+    $scrollbarW: 22px; 
+    width: $scrollbarW;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 999999;
+    top: 0;
+    .scroll-bg, .scroll-grab {
+        position: absolute;
+    }
+    .scroll-bg {
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        display: none;
+    }
+    .scroll-grab {
+        width: $scrollbarW;
+        height: 100px;
+        z-index: 1;
+        &.hovered {
+            .scroll-inside {
+                @include anim(.6s, 0s, $easeOutExpo, translateX(-8px) translateZ(0px), 0%, 50%);
+            }
+        }
+        .scroll-inside {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            left: 16px;
+            position: relative;
+            @include anim(.6s, 0s, $easeOutExpo, translateX(0px) translateZ(0px), 0%, 50%);
+        }
+    }
+}
+
+#wistia-player {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(1px);
+    .wistia_embed {
+        width: 100%;
+        height: 100%;
+    }
+    .play-btn {
+        $w: 64px;
+        $h: 35px;
+        position: absolute;
+        z-index: 2;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        margin-left: -$w/2;
+        margin-top: -$h/2;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        @include simpleUpperText();
+    }
+    .top-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+}

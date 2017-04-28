@@ -1,0 +1,69 @@
+#front-container {
+	position: fixed;
+	z-index: 20;
+	width: 100%;
+	#logo {
+		$w: 100px;
+		$h: 28.9px;
+		width: $w;
+		height: $h;
+		position: absolute;
+		top: $overallMargin - 6;
+		left: $overallMargin;
+		z-index: 2;
+		svg path {
+			fill: $black;
+			@include simpleAnim(.6s, .0s, $easeInOutExpo);
+		}
+		@include anim(.1s, .0s, $easeOutExpo, translateY(0px));
+		&:hover {
+			@include anim(.2s, .0s, $easeOutExpo, translateY(2px));
+		}
+	}
+	#footer {
+		position: absolute;
+		z-index: 2;
+		.text-btn {
+			position: absolute;
+		}
+		#social {
+			@include max-screen($MQ_LARGE) {
+				visibility: hidden;
+			}
+		}
+		#connect-btns {
+			position: absolute;
+			$margin: 24px;
+			width: 120px;
+    		height: 90px;
+    		a {
+    			color: #000;
+    		}
+    		.btns-wrapper {
+    			position: relative;
+    			top: 1px;
+    			@extend .full;
+    		}
+    		.text-btn#main-title {
+				bottom: 0;
+				right: 0;
+    		}
+			.socials-wrapper {
+				position: relative;
+				left: 44px;
+				top: 28px;
+				#twitter-btn {
+					left: 11px;
+				}
+				#instagram-btn {
+					top: $margin;
+					left: -15px;
+				}
+				#facebook-btn {
+					top: $margin * 2;
+					left: -9px;
+				}
+			}
+		}
+	}
+}
